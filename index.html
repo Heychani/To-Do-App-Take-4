@@ -5,6 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;600;800&family=Raleway:wght@100;200;300;500;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="todo.css" />
 </head>
 <section class="header">
 
@@ -13,29 +20,53 @@
 
 <div class="new-task-header-box">
 
-    <label for="new-task">Add new Task</label>
-    <input type="text" id="new-task">
+    <!-- <label id="addingTask" for="new-task">Add new Task</label> -->
+    <input type="text" id="new-task" placeholder="e.g. Make dinner">
     <button id="addTask">Add Task</button>
 
 </div>
 
-<div class="todo-list box">
-    <h2>Incomplete Tasks</h2>
-    <ul>
-        <li><input type="checkbox"><label>Task Name</label></li>
-        <li><input type="checkbox"><label>Task Name</label></li>
-        <li><input type="checkbox"><label>Task Name</label></li>
+<div class="todo-list">
+    <h2>To Do: </h2>
+    <div class="list" id="todo-list"></div>
+    
+    <div class="todo-item">
+        <label>
+            <input type="checkbox" />
+            <span class="category personal"></span> 
+        </label>
+
+        <div class="todo-content">
+            <input type="text" value="Make Dinner" readonly/>
+        </div>
+
+        <div class="actions">
+            <button class="edit">Edit</button>
+            <button class="delete">Delete</button>
+        </div>
+    </div>
+    <ul class="list">
+        <li><input type="checkbox" name="category" id="checklist"><label> Eat
+            <button class="edit">Edit</button>
+            <button class="delete">Delete</button></label></li>
+        <li><input type="checkbox" name="category" id="checklist"><label> Sleep
+            <button class="edit">Edit</button>
+            <button class="delete">Delete</button></label></li>
+        <li><input type="checkbox" name="category" id="checklist"><label> Code
+            <button class="edit">Edit</button>
+            <button class="delete">Delete</button></label></li>
+        <li><input type="checkbox" name="category" id="checklist"><label> Repeat
+            <button class="edit">Edit</button>
+            <button class="delete">Delete</button></label></li>
+
     </ul>
 </div>
 
 <div class="complete-list box">
 
-    <h2>Completed Tasks</h2>
-    <ul>
-        <li>Task Name
-            <button class="edit">Edit</button>
-            <button class="delete">Delete</button>
-            </li>
+    <h3>and DONE....</h2>
+    <ul class="done-list">
+        <li> Coding Queen</li>
     </ul>
 
 </div>
