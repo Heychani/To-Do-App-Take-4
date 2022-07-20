@@ -35,13 +35,10 @@ var addTask = function(){
 };
 
 //function om die task te edit
-// var editTask = function() {
-//     var editT = document.createElement("button");
-//     editT.innerText = "Edit";
-//     editT.className = "edit";
-//     listItem.appendChild(editT);
-
-//     editTask()
+// edit_button.addEventListener("click", function(){
+//     paragraph.contentEditable = true;
+//     paragraph.style.backgroundColor = "#e9bd6b";
+// })
 
 // };
 
