@@ -1,12 +1,12 @@
 //verskillende variables wat ek wil gebruik in my JavaScript functions
 var newTask = document.querySelector('#new-task');
-var addTask = document.querySelector('#addTask');
+var addTaskBtn = document.querySelector('#addTask');
 var toDoUl = document.querySelector('.todo-list ul');
 var completeUl = document.querySelector('.complete-list ul');
 
 
 //all die functions wat ek wil create 
-var createNewTask = function(task) {
+var createNewTask = function(task){
     console.log("Creating task...");
 
     var listItem = document.createElement("li");
@@ -24,7 +24,7 @@ var createNewTask = function(task) {
 
 };
 //'n function wat ek create het om 'n nuwe task te vat en in die incomplete list te sit
-var addTask = function() {
+var addTask = function(){
     console.log("Adding task...");
     var listItem = createNewTask(newTask.value); // hier store hy die nuwe input in 'n variable
     toDoUl.appendChild(listItem); //die add die nuwe item na die list
@@ -34,13 +34,18 @@ var addTask = function() {
 
 };
 
+//function om die task te edit
+// var editTask = function() {
+    
+// }
+
 //function vir wanneer tasks complete word, met die aktivering en ontwikkeling van die delete knoppie
-var completeTask = function() {
+var completeTask = function(){
     var listItem = this.parentNode;
-    var deleteButton = document.createElement("button");
-    deleteButton.innerText = "Delete";
-    deleteButton.className = "delete";
-    listItem.appendChild(deleteButton);
+    var deleteBtn = document.createElement("button");
+    deleteBtn.innerText = "Delete";
+    deleteBtn.className = "delete";
+    listItem.appendChild(deleteBtn);
 //die sa; die checked items vat en dan weer remove van die lys
     var checkBox = listItem.querySelector("input[type=checkbox]");
     checkBox.remove();
@@ -54,7 +59,7 @@ var completeTask = function() {
 };
 
 //'n function om die delete button te laat werk
-var deleteTask = function() {
+var deleteTask = function(){
     console.log("Deleting task...");
 
     var listItem = this.parentNode;
@@ -65,7 +70,7 @@ var deleteTask = function() {
 };
 
 //maak nou 'n function wat alles in die onvolledige box bymekaar sit
-var bindIncompleteItems = function(taskItem, checkBoxClick) {
+var bindIncompleteItems = function(taskItem, checkBoxClick){
     console.log("Binding the incomplete list....");
 
     var checkBox = taskItem.querySelector("input[type=checkbox]");
@@ -75,13 +80,13 @@ var bindIncompleteItems = function(taskItem, checkBoxClick) {
 };
 
 //maak nou 'n function wat alles in die volledige box bymekaar sit
-var bindCompletedItems = function(taskItem, deleteButtonPress){
+var bindCompleteItems = function(taskItem, deleteButtonPress){
     console.log("Binding completed tasks...");
 
     //sit die delete knoppie by
-    var deleteBtn = taskItem.querySelector(".delete");
+    var deleteButton = taskItem.querySelector(".delete");
     //hier sê ek wat moet gebeur wanneer iemand op die knoppie druk
-    deleteBtn.onclick = deleteButtonPress;
+    deleteButton.onclick = deleteButtonPress;
 
 };
 
@@ -90,7 +95,7 @@ for(var i = 0; i < toDoUl.children.length; i++ ) {
 }
 
 for(var i = 0; i < completeUl.children.length; i++ ){
-    bindCompletedItems(completeUl.children[i], deleteTask);
+    bindCompleteItems(completeUl.children[i], deleteTask);
 }
 
 addTaskBtn.addEventListener("click", addTask);
