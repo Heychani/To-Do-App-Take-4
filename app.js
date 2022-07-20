@@ -36,8 +36,14 @@ var addTask = function(){
 
 //function om die task te edit
 // var editTask = function() {
-    
-// }
+//     var editT = document.createElement("button");
+//     editT.innerText = "Edit";
+//     editT.className = "edit";
+//     listItem.appendChild(editT);
+
+//     editTask()
+
+// };
 
 //function vir wanneer tasks complete word, met die aktivering en ontwikkeling van die delete knoppie
 var completeTask = function(){
