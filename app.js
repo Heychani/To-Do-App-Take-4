@@ -59,31 +59,46 @@ var addTask = function() {
 
 };
 
-//function om die task te edit
-// edit_button.addEventListener("click", function(){
-//     paragraph.contentEditable = true;
-//     paragraph.style.backgroundColor = "#e9bd6b";
-// });
+//function om die task te edit wat klaar bestaan
+var editTask = function() {
+    console.log("Edit task...");
 
-//function vir wanneer tasks complete word, met die aktivering en ontwikkeling van die delete knoppie
-// var completeTask = function(){
-//     var listItem = this.parentNode;
-//     var deleteBtn = document.createElement("button");
-//     deleteBtn.innerText = "Delete";
-//     deleteBtn.className = "delete";
-//     listItem.appendChild(deleteBtn);
-//die sal die checked items vat en dan weer remove van die lys
-    // var checkBox = listItem.querySelector("input[type=checkbox]");
-    // checkBox.remove();
+    var listItem = this.parentNode;
 
-    //waar die removed item in die completed list geinsert sal word
-    // completeUl.appendChild(listItem);
+    var editInput = listItem.querySelector("input[type=text");
+    var label = listItem.querySelector("label");
 
-    //sit alles by mekaar in die completed list
-//     bindIncompleteItems(listItem, deleteTask);
+    var containsClass = listItem.classList.contains("editMode");
 
-// };
+    if (containsClass) { //if the class of the parent is .editMode switch to take an input
+        label.innerText = editInput.value;
+    }else {
+        editInput.value = label.innerText;//input changes
+    }
+    listItem.classList.toggle("editMode");
+    }
 
+var deleteTask = function() {
+    console.log("Deleting task....");
+    var listItem = this.parentNode;
+    var ul = listItem.parentNode;
+
+    ul.removeChild(listItem); //removes the chosen ToDo from the list
+}
+ 
+var taskCompleted = function() {
+    console.log("Task completed.....");
+    var listItem = this.parentNode;
+    completedTaskHolder.appendChild(listItem);
+    bindTaskEvents(listItem, taskIncomplete);
+}
+
+var taskIncomplete = function() {
+    console.log("Task incomplete....");
+    var listItem = this.parentNode;
+    incompleteTaskHolder.appendChild(listItem);
+    bindTaskEvents(listItem, taskCompleted);
+}
 //'n function om die delete button te laat werk
 // var deleteTask = function(){
 //     console.log("Deleting task...");
