@@ -1,3 +1,11 @@
+// add
+// edit
+// delete
+// due dates
+// alphabetically sorted
+// strike through
+// JSON format
+
 //verskillende variables wat ek wil gebruik in my JavaScript functions
 var newTask = document.querySelector('#new-task');
 var addTaskBtn = document.querySelector('#addTask');
@@ -38,9 +46,7 @@ var addTask = function(){
 // edit_button.addEventListener("click", function(){
 //     paragraph.contentEditable = true;
 //     paragraph.style.backgroundColor = "#e9bd6b";
-// })
-
-// };
+// });
 
 //function vir wanneer tasks complete word, met die aktivering en ontwikkeling van die delete knoppie
 var completeTask = function(){
@@ -49,7 +55,7 @@ var completeTask = function(){
     deleteBtn.innerText = "Delete";
     deleteBtn.className = "delete";
     listItem.appendChild(deleteBtn);
-//die sa; die checked items vat en dan weer remove van die lys
+//die sal die checked items vat en dan weer remove van die lys
     var checkBox = listItem.querySelector("input[type=checkbox]");
     checkBox.remove();
 
@@ -102,6 +108,7 @@ for(var i = 0; i < completeUl.children.length; i++ ){
 }
 
 addTaskBtn.addEventListener("click", addTask);
+
 
 
 
