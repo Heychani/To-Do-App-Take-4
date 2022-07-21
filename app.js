@@ -93,9 +93,6 @@ function displayTaskElement() {
         console.log(taskArray[i].getDate);
         label.innerText = taskArray[i].getTask;
         labelDate.innerText = taskArray[i].getDate;
-        editButton.onclick = editTask(i);
-        //deleteButton.onclick = deleteTask(i);
-        // label.innerText = taskString;
 
         //elke element moet geappend word om by sy nuwe plek uit te kom
         listItem.appendChild(checkBox);
@@ -107,6 +104,17 @@ function displayTaskElement() {
 
         incompleteTasksHolder.appendChild(listItem);
         //add die nuwe item aan die list
+
+        let theEdits = document.getElementsByClassName("editClass");
+        console.log("theEdits");
+        console.log(theEdits);
+        let theDeletes = document.getElementsByClassName("deleteClass");
+        theEdits[i].onclick = function () {
+            editTask(i);
+        }
+        /*theDeletes[i].onclick = function () {
+            deleteTask(i);
+        }*/
     }
 }
 
@@ -123,15 +131,13 @@ function displayTaskElement() {
 
 //function om die task te edit wat klaar bestaan
 function editTask(i) {
-    i = parseInt(i);
+
 
     console.log("Edit task...");
 
     let theTasks = document.getElementsByClassName("new-task");
     let theDates = document.getElementsByClassName("new-date");
     let theBoxes = document.getElementsByClassName("checkbox");
-    let theEdits = document.getElementsByClassName("editClass");
-    let theDeletes = document.getElementsByClassName("deleteClass");
 
     console.log("theTasks is:");
     console.log(theTasks);
@@ -139,16 +145,12 @@ function editTask(i) {
     console.log(theDates);
     console.log("theBoxes is:");
     console.log(theBoxes);
-    console.log("theEdits is:");
-    console.log(theEdits);
-    console.log("theDeletes is:");
-    console.log(theDeletes);
 
     console.log("i is:");
     console.log(i);
 
-    console.log("theEdits[" + i + "] is:");
-    console.log(theEdits[i]);
+    console.log("theTasks[" + i + "] is:");
+    console.log(theTasks[i]);
 
     /* var listItem = theTasks[i].parentNode;
  
