@@ -86,6 +86,7 @@ function displayTaskElement(){
     console.log("HIERRRRR");
     console.log(taskArray[i]);
     console.log(i);
+    console.log(taskArray[i].getDate);
     label.innerText = taskArray[i].getDate;
 
     editButton.onclick = editTask();
