@@ -19,16 +19,22 @@
 
         <h1> What To-Do Today</h1>
         <h3>What do you need to do? </h3>
-        <p>
-            <input id="new-task" type="text"><button>Add Task</button>
-        </p>
+        <form>
+            <input id="new-task" type="text" required>
+            <input id="new-date" type="date" required>
+            <button type="submit" onclick="addTask(event)">Add Task</button>
+        </form>
 
         <h2>Things To Do </h2>
         <ul id="incomplete-tasks">
-            <li><input type="checkbox"><label>Cooking food</label><input type="text">
+            <li><input type="checkbox">
+                <label>Cooking food</label>
+                <input type="text">
                 <button class="edit">Edit</button>
                 <button class="delete">Delete</button></li>
-            <li><input type="checkbox"><label>Walk the dogs</label><input type="text" value="walk the dogs">
+            <li><input type="checkbox">
+                <label>Walk the dogs</label>
+                <input type="text" value="walk the dogs">
                 <button class="edit">Edit</button>
                 <button class="delete">Delete</button></li>
         </ul>
