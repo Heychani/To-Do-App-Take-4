@@ -99,48 +99,27 @@ var taskIncomplete = function() {
     incompleteTaskHolder.appendChild(listItem);
     bindTaskEvents(listItem, taskCompleted);
 }
-//'n function om die delete button te laat werk
-// var deleteTask = function(){
-//     console.log("Deleting task...");
+ 
+var bindTaskEvents = function(taskListItem, checkBoxEventHandler) {
+    console.log("Binding items....");
+    var checkBox = taskListItem.querySelector("input[type=checkbox]");
+    var editButton = taskListItem.querySelector("button.edit");
+    var deleteButton = taskListItem.querySelector("button.delete");
 
-//     var listItem = this.parentNode;
-//     var ul = listItem.parentNode;
+    editButton.onclick = editTask;
+    deleteButton.onclick = deleteTask;
+    checkBox.onchage = checkBoxEventHandler;
+}
 
-//     ul.removeChild(listItem);
+addButton.addEventListener("click", addTask);
+//laat alles weer oor en oor gebeur
+for (var i = 0; i < incompleteTaskHolder.children.length; i++) {
+    bindTaskEvents(incompleteTaskHolder.children[i], taskCompleted);
+}
 
-// };
-
-//maak nou 'n function wat alles in die onvolledige box bymekaar sit
-// var bindIncompleteItems = function(taskItem, checkBoxClick){
-//     console.log("Binding the incomplete list....");
-
-//     var checkBox = taskItem.querySelector("input[type=checkbox]");
-
-//     checkBox.onchange = checkBoxClick;
-
-// };
-
-//maak nou 'n function wat alles in die volledige box bymekaar sit
-// var bindCompleteItems = function(taskItem, deleteButtonPress){
-//     console.log("Binding completed tasks...");
-
-    //sit die delete knoppie by
-    // var deleteButton = taskItem.querySelector(".delete");
-    //hier sê ek wat moet gebeur wanneer iemand op die knoppie druk
-//     deleteButton.onclick = deleteButtonPress;
-
-// };
-
-// for(var i = 0; i < toDoUl.children.length; i++ ) {
-//     bindIncompleteItems(toDoUl.children[i], completeTask);
-// }
-
-// for(var i = 0; i < completeUl.children.length; i++ ){
-//     bindCompleteItems(completeUl.children[i], deleteTask);
-// }
-
-// addTaskBtn.addEventListener("click", addTask);
-
+for (var i = 0; i < completedTaskHolder.children.length; i++) {
+    bindTaskEvents(completedTaskHolder.children[i], taskIncomplete);
+}
 
 
 
