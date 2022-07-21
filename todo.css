@@ -156,3 +156,20 @@ ul li.editMode input[type="text"]{
 ul li.editMode label{
     display: none;
 }
+
+.checkbox{
+    padding: 2px;
+}
+.new-task{
+    padding: 2px;
+}
+.new-date{
+    padding: 2px;
+}
+
+.editClass{
+    padding: 2px;
+}
+.deleteClass{
+    padding: 2px;
+}

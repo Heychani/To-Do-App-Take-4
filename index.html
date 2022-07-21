@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="todo.css" />
 </head>
 <body>
-<body>
+<body onload="displayTaskElement()">
     <div class="container">
 
         <h1> What To-Do Today</h1>
@@ -27,16 +27,7 @@
 
         <h2>Things To Do </h2>
         <ul id="incomplete-tasks">
-            <li><input type="checkbox">
-                <label>Cooking food</label>
-                <input type="text">
-                <button class="edit">Edit</button>
-                <button class="delete">Delete</button></li>
-            <li><input type="checkbox">
-                <label>Walk the dogs</label>
-                <input type="text" value="walk the dogs">
-                <button class="edit">Edit</button>
-                <button class="delete">Delete</button></li>
+
         </ul>
 
         <h3>To Do's Accomplished</h3>
