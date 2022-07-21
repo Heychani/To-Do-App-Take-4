@@ -34,7 +34,6 @@ h1{
     padding: 1rem;
     transition-delay: 1s;
     animation: ease-in-out;
-    animation-fill-mode: both;
 }
 
 h2{
@@ -139,10 +138,6 @@ li > label {
 
 li > input[type="text"] {
     width: 226px;
-}
-
-li > .delete:hover{
-    color: lightcoral;
 }
 
 #completed-tasks label{

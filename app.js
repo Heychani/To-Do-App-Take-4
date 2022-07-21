@@ -9,21 +9,17 @@
 //verskillende variables wat ek wil gebruik in my JavaScript functions
 var taskInput = document.getElementById("new-task"); //nuwe task
 var addButton = document.getElementsByTagName("button")[0]; //eerste button
-var incompleteTaskHolder = document.getElementById("incomplete-tasks");
-var completedTaskHolder = document.getElementById("completed-tasks");
+var incompleteTasksHolder = document.getElementById("incomplete-tasks");
+var completedTasksHolder = document.getElementById("completed-tasks");
 
 var createNewTaskElement = function(taskString) { //new task list item
 
     var listItem = document.createElement("li"); //create list item
 
     var checkBox = document.createElement("input"); //input van die checkbox
-
     var label = document.createElement("label"); //die label
-
     var editInput = document.createElement("input"); //text input edit
-
     var editButton = document.createElement("edit"); //edit button
-
     var deleteButton = document.createElement("delete"); //delete button
 
     //elke element moet gemodify word na iets anders wanneer dit na sy completed lys toe gaan
@@ -52,12 +48,12 @@ var createNewTaskElement = function(taskString) { //new task list item
 var addTask = function() {
     console.log("Adding task...");
     var listItem = createNewTaskElement(taskInput.value); // hier store hy die nuwe input in 'n variable
-    incompleteTaskHolder.appendChild(listItem); //die add die nuwe item na die list
+    incompleteTasksHolder.appendChild(listItem); //die add die nuwe item na die list
     bindTaskEvents(listItem, taskCompleted); //die reset die input
 
     taskInput.value = "";
 
-};
+}
 
 //function om die task te edit wat klaar bestaan
 var editTask = function() {
@@ -65,11 +61,9 @@ var editTask = function() {
 
     var listItem = this.parentNode;
 
-    var editInput = listItem.querySelector("input[type=text");
+    var editInput = listItem.querySelector("input[type=text]");
     var label = listItem.querySelector("label");
-
     var containsClass = listItem.classList.contains("editMode");
-
     if (containsClass) { //if the class of the parent is .editMode switch to take an input
         label.innerText = editInput.value;
     }else {
@@ -87,16 +81,16 @@ var deleteTask = function() {
 }
  
 var taskCompleted = function() {
-    console.log("Task completed.....");
+    console.log("Task complete.....");
     var listItem = this.parentNode;
-    completedTaskHolder.appendChild(listItem);
+    completedTasksHolder.appendChild(listItem);
     bindTaskEvents(listItem, taskIncomplete);
 }
 
 var taskIncomplete = function() {
     console.log("Task incomplete....");
     var listItem = this.parentNode;
-    incompleteTaskHolder.appendChild(listItem);
+    incompleteTasksHolder.appendChild(listItem);
     bindTaskEvents(listItem, taskCompleted);
 }
  
@@ -108,17 +102,17 @@ var bindTaskEvents = function(taskListItem, checkBoxEventHandler) {
 
     editButton.onclick = editTask;
     deleteButton.onclick = deleteTask;
-    checkBox.onchage = checkBoxEventHandler;
-}
+    checkBox.onchange = checkBoxEventHandler;
+};
 
 addButton.addEventListener("click", addTask);
 //laat alles weer oor en oor gebeur
-for (var i = 0; i < incompleteTaskHolder.children.length; i++) {
-    bindTaskEvents(incompleteTaskHolder.children[i], taskCompleted);
-}
+for (var i = 0; i < incompleteTasksHolder.children.length; i++) {
+    bindTaskEvents(incompleteTasksHolder.children[i], taskCompleted);
+};
 
-for (var i = 0; i < completedTaskHolder.children.length; i++) {
-    bindTaskEvents(completedTaskHolder.children[i], taskIncomplete);
+for (var i = 0; i < completedTasksHolder.children.length; i++) {
+    bindTaskEvents(completedTasksHolder.children[i], taskIncomplete);
 }
 
 
