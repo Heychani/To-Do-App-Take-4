@@ -18,7 +18,7 @@ class Task{
         return this._date;
     }
     get getTask () {
-        return this._task
+        return this._task;
     }
 
     set setTask(inputParam){
@@ -29,11 +29,12 @@ class Task{
         this._date = inputParam;
     }
     setCompleted(){
-        this._completed = !this_._completed
+        this._completed = !this_._completed;
     }
 }
 
-let taskArray = [];
+let taskArray = [new Task("Cooking food", "2022/07/11"), new Task("Walk the dogs", "2022/07/12")];
+
 var taskInput = document.getElementById("new-task");
 
 function addTask(event){
@@ -44,10 +45,8 @@ function addTask(event){
 
     var taskInputValue = taskInput.value;
     var dateInputValue = dateInput.value;
-    console.log(taskInputValue);
 
     console.log("Adding task...");
-    console.log(dateInputValue);
 
     taskArray.push(new Task(addTask, taskInputValue, dateInputValue));
     displayTaskElement();
@@ -61,51 +60,62 @@ var completedTasksHolder = document.getElementById("completed-tasks");
 //var createNewTaskElement = function(taskString) { //new task list item
 
 function displayTaskElement(){
+    console.log("taskArray.length");
+    console.log(taskArray.length);
+    for (let i = 0; i < taskArray.length; i++) {
+        taskInput.value = "";
 
-    for (let i = 0; i < taskArray.length; i++){
-        //bindTaskEvents(listItem, taskCompleted);
-    taskInput.value = "";
+        var listItem = document.createElement("li"); //create list item
+        
+        var checkBox = document.createElement("input"); //this takes the input from the checkbox
+        var label = document.createElement("label"); //die label
+        var editInput = document.createElement("input"); //text input edit
+        var editButton = document.createElement("button"); //edit button
+        var deleteButton = document.createElement("button"); //delete button
+        var labelDate = document.createElement("input"); //this is the date label so that it shows
 
-    var listItem = document.createElement("li"); //create list item
+        checkBox.type = "checkBox";
+        editInput.type = "text";
 
-    var checkBox = document.createElement("input"); //input van die checkbox
-    var label = document.createElement("label"); //die label
-    var editInput = document.createElement("input"); //text input edit
-    var editButton = document.createElement("button"); //edit button
-    var deleteButton = document.createElement("button"); //delete button
-    var labelDate = document.createElement("label");
+        editButton.innerText = "Edit";
+        editButton.className = "edit";
+        deleteButton.innerText = "Delete";
+        deleteButton.className = "delete";
 
-    checkBox.type = "checkbox";
-    editInput.type = "text";
+        label.classList.add("new-task"); //this entire section adds the different components into the list, this is where the modification takes place and the information is taken in by the program
+        labelDate.classList.add("new-date");
+        checkBox.classList.add("checkbox");
+        editButton.classList.add("editClass");
+        deleteButton.classList.add("deleteClass");
 
-    editButton.innerText = "Edit";
-    editButton.className = "edit";
-    deleteButton.innerText = "Delete";
-    deleteButton.className = "delete";
+        console.log("HIERRRRR");
+        console.log(taskArray[i]);
+        console.log(i);
+        console.log(taskArray[i].getDate);
+        label.innerText = taskArray[i].getTask;
+        labelDate.innerText = taskArray[i].getDate;
 
-    console.log("HIERRRRR");
-    console.log(taskArray[i]);
-    console.log(i);
-    console.log(taskArray[i].getDate);
-    let theDate = document.createTextNode(taskArray[i].getDate);
-    label.innerText = theDate;
+        listItem.appendChild(checkBox);
+        listItem.appendChild(label);
+        listItem.appendChild(editInput);
+        listItem.appendChild(editButton);
+        listItem.appendChild(deleteButton);
+        listItem.appendChild(labelDate);
 
-    editButton.onclick = editTask();
-    deleteButton.onclick = deleteTask();
-    checkBox.onchange = checkBoxEventHandler;
+        incompleteTasksHolder.appendChild(listItem);
 
-    // label.innerText = taskString;
-
-    //elke element moet geappend word om by sy nuwe plek uit te kom
-    listItem.appendChild(checkBox);
-    listItem.appendChild(label);
-    listItem.appendChild(editInput);
-    listItem.appendChild(editButton);
-    listItem.appendChild(deleteButton);
-    listItem.appendChild(labelDate);
+        let theEdits = document.getElementsByClassName("editClass");
+        console.log("theEdits");
+        console.log(theEdits);
+        let theDeletes = document.getElementsByClassName("deleteClass");
+        theEdits[i].onclick = function() {
+            editTask(i);
+        }
+        theDeletes[i].onclick = function() {
+            deleteTask(i);
+        } 
     }
-    incompleteTasksHolder.appendChild(listItem);
- //add die nuwe item aan die list
+    
 }
 
 //'n function wat ek create het om 'n nuwe task te vat en in die incomplete list te sit
@@ -123,27 +133,55 @@ function displayTaskElement(){
 function editTask(i) {
     console.log("Edit task...");
 
-    var listItem = this.parentNode;
+    let theTasks = document.getElementsByClassName("new-task");
+    let theDates = document.getElementsByClassName("new-date");
+    let theBoxes = document.getElementsByClassName("checkbox");
 
-    var editInput = listItem.querySelector("input[type=text]");
-    var label = listItem.querySelector("label");
+    console.log("theTasks is: ");
+    console.log(theTasks);
+    console.log("theDates is: ");
+    console.log(theDates);
+    console.log("theBoxes is: ");
+    console.log(theBoxes);
+
+    console.log("i is: ");
+    console.log(i);
+
+    console.log("theTasks[" + i + "] is: ");
+
+    /*var listItem = theTasks[i].parentNode;
+
+    var editInput = document.createElement("input");
+    var label = theTasks[i];
     var containsClass = listItem.classList.contains("editMode");
-    editTask(i);
     if (containsClass) { //if the class of the parent is .editMode switch to take an input
         label.innerText = editInput.value;
     }else {
         editInput.value = label.innerText;//input changes
     }
     listItem.classList.toggle("editMode");
-    }
+    }*/
+}
 
-function deleteTask(i) {
+function deleteTask() {
     console.log("Deleting task....");
-    var listItem = this.parentNode;
-    var ul = listItem.parentNode;
-    deleteTask(i);
 
-    ul.removeChild(listItem); //removes the chosen ToDo from the list
+    let theTasks = document.getElementsByClassName("new-task");
+    let theDates = document.getElementsByClassName("new-date");
+    let theBoxes = document.getElementsByClassName("checkbox");
+
+    console.log("theTasks is: ");
+    console.log(theTasks);
+    console.log("theDates is: ");
+    console.log(theDates);
+    console.log("theBoxes is: ");
+    console.log(theBoxes);
+
+    console.log("i is: ");
+    console.log(i);
+
+    console.log("theTasks[" + i + "] is: ");
+    console.log(theTasks[i]);
 }
  
 function taskCompleted() {
@@ -160,26 +198,26 @@ function taskIncomplete() {
     bindTaskEvents(listItem, taskCompleted);
 }
  
-function bindTaskEvents(taskListItem, checkBoxEventHandler) {
-    console.log("Binding items....");
-    var checkBox = taskListItem.querySelector("input[type=checkbox]");
-    var editButton = taskListItem.querySelector("button.edit");
-    var deleteButton = taskListItem.querySelector("button.delete");
+// function bindTaskEvents(taskListItem, checkBoxEventHandler) {
+//     console.log("Binding items....");
+//     var checkBox = taskListItem.querySelector("input[type=checkbox]");
+//     var editButton = taskListItem.querySelector("button.edit");
+//     var deleteButton = taskListItem.querySelector("button.delete");
 
-    editButton.onclick = editTask;
-    deleteButton.onclick = deleteTask;
-    checkBox.onchange = checkBoxEventHandler;
-}
+//     editButton.onclick = editTask;
+//     deleteButton.onclick = deleteTask;
+//     checkBox.onchange = checkBoxEventHandler;
+// }
 
 //addButton.addEventListener("click", addTask);
 //laat alles weer oor en oor gebeur
-for (var i = 0; i < incompleteTasksHolder.children.length; i++) {
-    bindTaskEvents(incompleteTasksHolder.children[i], taskCompleted);
-}
+// for (var i = 0; i < incompleteTasksHolder.children.length; i++) {
+//     bindTaskEvents(incompleteTasksHolder.children[i], taskCompleted);
+// }
 
-for (var i = 0; i < completedTasksHolder.children.length; i++) {
-    bindTaskEvents(completedTasksHolder.children[i], taskIncomplete);
-}
+// for (var i = 0; i < completedTasksHolder.children.length; i++) {
+//     bindTaskEvents(completedTasksHolder.children[i], taskIncomplete);
+// }
 
 
 

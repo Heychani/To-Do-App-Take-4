@@ -11,43 +11,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;600;800&family=Raleway:wght@100;200;300;500;700;800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="todo.css" />
+    <link rel="stylesheet" href="stylesheet.css" />
 </head>
-<body>
-<body>
-    <div class="container">
+<body onload="displayTaskElement()">
+    <body>
+        <div class="container">
 
-        <h1> What To-Do Today</h1>
-        <h3>What do you need to do? </h3>
-        <form>
-            <input id="new-task" type="text" required>
-            <input id="new-date" type="date" required>
-            <button type="submit" onclick="addTask(event)">Add Task</button>
-        </form>
+            <h1> What To-Do Today</h1>
+            <h3>What do you need to do? </h3>
+            <form>
+                <input id="new-task" type="text" required>
+                <input id="new-date" type="date" required>
+                <button type="submit" onclick="addTask(event)">Add Task</button>
+            </form>
 
-        <h2>Things To Do </h2>
-        <ul id="incomplete-tasks">
-            <li><input type="checkbox">
-                <label>Cooking food</label>
-                <input type="text">
+            <h2>Things To Do </h2>
+            <ul id="incomplete-tasks">
+                
+            </ul>
+
+            <h3>To Do's Accomplished</h3>
+            <ul id="completed-tasks">
+                <li><input type="checkbox" checked><label>Code like a Queen</label><input type="text">
                 <button class="edit">Edit</button>
                 <button class="delete">Delete</button></li>
-            <li><input type="checkbox">
-                <label>Walk the dogs</label>
-                <input type="text" value="walk the dogs">
-                <button class="edit">Edit</button>
-                <button class="delete">Delete</button></li>
-        </ul>
-
-        <h3>To Do's Accomplished</h3>
-        <ul id="completed-tasks">
-            <li><input type="checkbox" checked><label>Code like a Queen</label><input type="text">
-            <button class="edit">Edit</button>
-            <button class="delete">Delete</button></li>
-        </ul>
-    </div>
-    
-</body>
+            </ul>
+        </div>
+        
+    </body>
 <script src="app.js"></script>
 </body>
 </html>
