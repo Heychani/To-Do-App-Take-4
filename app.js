@@ -9,7 +9,7 @@
 //verskillende variables wat ek wil gebruik in my JavaScript functions
 
 class Task{
-    constructor(input, date){
+    constructor(input, date){ //constructor is 'n metode om die maak en initializing van objects te create binne in 'n klas
         this._task = input;
         this._date = date;
         this._completed = false;
@@ -17,6 +17,7 @@ class Task{
     get getDate() {
         return this._date;
     }
+
     get getTask () {
         return this._task;
     }
@@ -31,20 +32,20 @@ class Task{
     setCompleted(){
         this._completed = !this_._completed;
     }
-}
+} //hier is die class Task created en die verskillende constructors wat binne in die new-task sal included word.
 
-let taskArray = [new Task("Cooking food", "2022/07/11"), new Task("Walk the dogs", "2022/07/12")];
+let taskArray = [new Task("Cooking food", "2022/07/11"), new Task("Walk the dogs", "2022/07/12")]; //new task kom vanaf die class task wat bo by mekaar gesit.
 
-var taskInput = document.getElementById("new-task");
+var taskInput = document.getElementById("new-task"); //hierdie laat die taskInput die "new-task" in vat.
 
-function addTask(event){
-    event.preventDefault()
-    var taskInput = document.getElementById("new-task");
-    var dateInput = document.getElementById("new-date");
+function addTask(event) { //hierdie is die function wat created is om die tasks te add en bymekaar te sit.
+    event.preventDefault() //die prevent die form om van vooraf te submit.
+    var taskInput = document.getElementById("new-task"); //'n variable wat die task input in vat.
+    var dateInput = document.getElementById("new-date"); //'n variable wat die date input in vat.
     console.log(taskInput);
 
-    var taskInputValue = taskInput.value;
-    var dateInputValue = dateInput.value;
+    var taskInputValue = taskInput.value; //hierdie variable vat die task input se value en save dit onder taskInputValue
+    var dateInputValue = dateInput.value; //hierdie variable vat die date input se value en save dit onder taskInputValue
 
     console.log("Adding task...");
 
@@ -59,7 +60,7 @@ var completedTasksHolder = document.getElementById("completed-tasks");
 
 //var createNewTaskElement = function(taskString) { //new task list item
 
-function displayTaskElement(){
+function displayTaskElement() {
     console.log("taskArray.length");
     console.log(taskArray.length);
     for (let i = 0; i < taskArray.length; i++) {
@@ -74,7 +75,7 @@ function displayTaskElement(){
         var deleteButton = document.createElement("button"); //delete button
         var labelDate = document.createElement("input"); //this is the date label so that it shows
 
-        checkBox.type = "checkBox";
+        checkBox.type = "checkBox"; 
         editInput.type = "text";
 
         editButton.innerText = "Edit";
@@ -130,7 +131,7 @@ function displayTaskElement(){
 // }
 
 //function om die task te edit wat klaar bestaan
-function editTask(i) {
+function editTask() {
     console.log("Edit task...");
 
     let theTasks = document.getElementsByClassName("new-task");
