@@ -87,7 +87,8 @@ function displayTaskElement(){
     console.log(taskArray[i]);
     console.log(i);
     console.log(taskArray[i].getDate);
-    label.innerText = taskArray[i].getDate;
+    let theDate = document.createTextNode(taskArray[i].getDate);
+    label.innerText = theDate;
 
     editButton.onclick = editTask();
     deleteButton.onclick = deleteTask();
@@ -119,7 +120,7 @@ function displayTaskElement(){
 // }
 
 //function om die task te edit wat klaar bestaan
-function editTask() {
+function editTask(i) {
     console.log("Edit task...");
 
     var listItem = this.parentNode;
@@ -127,6 +128,7 @@ function editTask() {
     var editInput = listItem.querySelector("input[type=text]");
     var label = listItem.querySelector("label");
     var containsClass = listItem.classList.contains("editMode");
+    editTask(i);
     if (containsClass) { //if the class of the parent is .editMode switch to take an input
         label.innerText = editInput.value;
     }else {
@@ -135,10 +137,11 @@ function editTask() {
     listItem.classList.toggle("editMode");
     }
 
-function deleteTask() {
+function deleteTask(i) {
     console.log("Deleting task....");
     var listItem = this.parentNode;
     var ul = listItem.parentNode;
+    deleteTask(i);
 
     ul.removeChild(listItem); //removes the chosen ToDo from the list
 }
