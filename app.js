@@ -50,7 +50,7 @@ function addTask(event) { //hierdie is die function wat created is om die tasks 
     console.log("Adding task...");
 
     taskArray.push(new Task(addTask, taskInputValue, dateInputValue));
-    displayTaskElement();
+    displayTaskElement(); //.push adds items to an end of a array
 }
 
 // var taskInput = document.getElementById("new-task"); //nuwe task
