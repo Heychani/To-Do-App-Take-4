@@ -49,7 +49,7 @@ function addTask(event){
     console.log("Adding task...");
 
     taskArray.push(new Task(addTask, taskInputValue, dateInputValue));
-    displayTaskElement(); //.push adds items to an end of a array
+    displayTaskElement();
 }
 
 // var taskInput = document.getElementById("new-task"); //nuwe task
