@@ -1,0 +1,172 @@
+:root {
+    --white: #fff;
+    --light: #eee;
+    --dark: #556173;
+    --darker: #1F2937;
+    --grey: #6B7280;
+    --teal: #008b8b;
+    --orange: #ffa500;
+    --lightorange: #e9bd6b;
+
+    --shadow: 0 1px 3px rbga(0, 0, 0, 0,1);
+
+    --teal-glow: 0px 0px 4px rgba(0, 139, 139, 0.75);
+    --teal-glow: 0px 0px 4px rgba(225, 165, 0, 0.75);
+}
+
+body {
+    background-color: var(--white);
+    color: var(--dark);
+    background: var(--light);
+}
+
+.container{
+    display: block;
+    /* width: 400px; */
+    margin: 10px;
+    /* background-color: var(--white); */
+    padding: 0px 10px 10px 10px;
+    border-radius: 10px;
+}
+
+h1{
+    margin: 1rem;
+    padding: 1rem;
+    transition-delay: 1s;
+    animation: ease-in-out;
+}
+
+h2{
+    padding-top: 10px;
+    margin-bottom: 0px;
+}
+
+#new-task{
+
+}
+
+#new-date{
+
+}
+
+.checkbox{
+    
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+li * {
+    float: left;
+}
+
+li, h3{
+    clear: both;
+    list-style: none;
+}
+
+input, button{
+    outline: none;
+}
+
+button{
+    background-color: var(--white);
+    border: 0.5rem;
+    color: var(--teal);
+    font-size: 15px;
+    padding: 10px;
+    margin: 0.5rem;
+    cursor: pointer;
+    float: right;
+    border: 1px solid var(--teal);
+}
+
+#incomplete-tasks{
+}
+
+button:hover{
+    box-shadow: #008b8b;
+}
+
+h3, label[for="new-task"] {
+    color: var(--teal);
+    font-weight: 700;
+    font-size: 15px;
+    border-bottom: 2px solid var(--teal);
+    padding: 20px 0 10px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+input[type="text"]{
+    margin: 6px;
+    font-size: 18px;
+    line-height: 18px;
+    height: 18px;
+    padding: 10px;
+    border: 1px solid var(--teal);
+    background: var(--white);
+    border-radius: 2px;
+    color: var(--grey);
+}
+
+input[type="text"]:focus {
+    color: var(--darker);
+}
+
+label[for="new-task"] {
+    display: block;
+    margin: 0 0 20px;
+}
+
+input#new-task{
+    width: 90%;
+}
+
+p > button:hover{
+    color: var(--lightorange);
+}
+
+
+
+li{
+    overflow: hidden;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--light);
+}
+
+li > input[type="checkbox"] {
+    margin: 0 10px;
+    position: relative;
+    top: 15px;
+}
+
+li > label {
+    font-size: 18px;
+    line-height: 40px;
+    width: 237px;
+    padding: 0 0 0 11px;
+}
+
+li > input[type="text"] {
+    width: 226px;
+}
+
+#completed-tasks label{
+    text-decoration: line-through;
+    color: var(--grey);
+}
+
+ul li input[type="text"]{
+    display: none;
+}
+
+ul li.editMode input[type="text"]{
+    display: block;
+}
+
+ul li.editMode label{
+    display: none;
+}
