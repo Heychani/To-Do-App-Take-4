@@ -13,32 +13,57 @@
 
     <link rel="stylesheet" href="stylesheet.css" />
 </head>
-<body onload="displayTaskElement()">
-    <body>
+<body>
+
         <div class="container">
 
-            <h1> What To-Do Today</h1>
-            <h3>What do you need to do? </h3>
-            <form>
+            <h1> What do you have planned? </h1>
+            <h3>What do you need to do and when? </h3>
+            <form id="new-todo-form">
                 <input id="new-task" type="text" required>
                 <input id="new-date" type="date" required>
                 <button type="submit" onclick="addTask(event)">Add Task</button>
             </form>
 
-            <h2>Things To Do </h2>
-            <ul id="incomplete-tasks">
-                
-            </ul>
+            <section class="incomplete-list">
+                <h2>Things To Do </h2>
+                <div class="list" id="incomplete-list"></div>
+            </section>
 
-            <h3>To Do's Accomplished</h3>
-            <ul id="completed-tasks">
-                <li><input type="checkbox" checked><label>Code like a Queen</label><input type="text">
-                <button class="edit">Edit</button>
-                <button class="delete">Delete</button></li>
-            </ul>
-        </div>
-        
-    </body>
-<script src="app.js"></script>
+                        <!-- <div class="todo-item done">
+                            <label>
+                                <input type="checkbox" />
+                                <span class="category personal"></span>
+                            </label>
+
+                            <div class="todo-content">
+                                <input type="text" value="Make dinner" readonly/>
+                            </div>
+
+                            <div class="actions">
+                                <button class="edit">Edit</button>
+                                <button class="delete">Delete</button>
+                            </div>
+                        </div>
+
+                        <div class="todo-item">
+                            <label>
+                                <input type="checkbox" />
+                                <span class="category bussines"></span>
+                            </label>
+
+                            <div class="todo-content">
+                                <input type="text" value="Finish To-Do app" readonly/>
+                            </div>
+
+                            <div class="actions">
+                                <button class="edit">Edit</button>
+                                <button class="delete">Delete</button>
+                            </div> -->
+                        <!-- </div> -->     
+
 </body>
+
+    <script src="app.js"></script>
+
 </html>

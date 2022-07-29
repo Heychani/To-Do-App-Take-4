@@ -14,10 +14,36 @@
     --teal-glow: 0px 0px 4px rgba(225, 165, 0, 0.75);
 }
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: inter;
+}
+
+input:not([type="radio"]):not([type="checkbox"]), button {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: initial;
+}
+
+
+
+
 body {
     background-color: var(--white);
     color: var(--dark);
-    background: var(--light);
+    background-blend-mode: 100;
+    background-image: url(https://images.unsplash.com/photo-1563291074-2bf8677ac0e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGxhaW4lMjBiYWNrZ3JvdW5kfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+section {
+    margin-top: 2rem;
+    
 }
 
 .container{
