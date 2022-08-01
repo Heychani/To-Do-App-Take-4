@@ -29,9 +29,6 @@ input:not([type="radio"]):not([type="checkbox"]), button {
     cursor: initial;
 }
 
-
-
-
 body {
     background-color: var(--white);
     color: var(--dark);
@@ -43,8 +40,12 @@ body {
 
 section {
     margin-top: 2rem;
-    
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }
+
+
 
 .container{
     display: block;
