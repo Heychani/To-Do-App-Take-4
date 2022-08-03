@@ -45,8 +45,6 @@ section {
     padding-right: 1.5rem;
 }
 
-
-
 .container{
     display: block;
     /* width: 400px; */
@@ -56,11 +54,30 @@ section {
     border-radius: 10px;
 }
 
-h1{
-    margin: 1rem;
-    padding: 1rem;
-    transition-delay: 1s;
-    animation: ease-in-out;
+h3 {
+    color: var(--dark);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+h4 {
+    color: var(--dark);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.greeting .title {
+    display: flex;
+}
+
+.greeting ,title input {
+    margin-left: 00.5rem;
+    flex: 1 1 0%;
+    min-width: 0;
 }
 
 h2{
