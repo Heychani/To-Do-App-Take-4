@@ -2,17 +2,16 @@
     --white: #fff;
     --light: #eee;
     --dark: #556173;
-    --darker: #1F2937;
+    --darker: #131519;
     --grey: #6B7280;
-    --teal: #008b8b;
     --orange: #ffa500;
     --lightorange: #e9bd6b;
     --pink: #d87093;
 
     --shadow: 0 1px 3px rbga(0, 0, 0, 0,1);
 
-    --teal-glow: 0px 0px 4px rgba(0, 139, 139, 0.75);
-    --teal-glow: 0px 0px 4px rgba(225, 165, 0, 0.75);
+    --pink-glow: 0px 0px 4px rgba(216, 112, 147, 0.75);
+    --orange-glow: 0px 0px 4px rgba(225, 165, 0, 0.75);
 }
 
 *{
@@ -22,17 +21,17 @@
     font-family: inter;
 }
 
-input:not([type="checkbox"]), button {
+input:not([type="radio"]):not([type="checkbox"]), button {
     appearance: none;
     border: none;
     outline: none;
-    background: none;
+    /* background: none; */
     cursor: initial;
 }
 
 body {
     background-color: var(--white);
-    color: var(--dark);
+    color: var(--darker);
     background-blend-mode: 100;
     background-image: url(https://images.unsplash.com/photo-1563291074-2bf8677ac0e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGxhaW4lMjBiYWNrZ3JvdW5kfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60);
     background-repeat: no-repeat;
@@ -46,69 +45,64 @@ section {
     padding-right: 1.5rem;
 }
 
-.container{
-    display: block;
-    /* width: 400px; */
-    margin: 10px;
-    /* background-color: var(--white); */
-    padding: 0px 10px 10px 10px;
-    border-radius: 10px;
+h3 {
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    font-weight: 400;
+    font-size: 1rem;
+    border-bottom: 2px solid var(--pink);
+    padding: 2rem;
+    margin: 0;
+    text-transform: uppercase;
 }
 
-
-/* .new-task input {
+.create-todo input[type="text"] {
     display: block;
-    border-style: solid;
-    border-width: 00.2rem;
-    border-color: var(--dark);
-    width: 50%;
+    width: 80%;
     font-size: 1.125rem;
-    padding: 1rem 1.5rem;
-    color: var(--dark);
-    background-color: var(--white);
+    padding: 2rem;
+    color: var(--darker);
+    background-color: var(--light);
     border-radius: 0.5rem;
-    box-shadow: var(--shadow);
-} */
-
-#new-date {
-    float: right;
+    box-shadow: var(--pink-glow);
+    margin: 2rem;
 }
 
-#add-task-button {
-    float: right;
-    margin-top: 3rem;
-    padding: 1rem;
-    font-weight: 600;
-    margin-right: none;
+input[type="checkbox"] {
+    display: none;
 }
 
-.incomplete-list input[type="submit"] {
+.create-to-do input[type="submit"] {
     display: block;
     width: 100%;
     font-size: 1.125rem;
     padding: 1rem 1.5rem;
     color: var(--white);
-    background-color: var(--grey);
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: var(--pink);
+    box-shadow: var(--pink-glow);
     border-radius: 0.5rem;
-    box-shadow: var(--shadow);
     cursor: pointer;
-    transition: 0.25s ease-in-out;
+    transition: 0.2s ease-in-out;
 }
 
-.incomplete-list input[type="submit"]:hover {
+.create-to-do input[type="submit"]:hover {
     opacity: 0.75;
 }
 
-.incomplete-list .list {
+.todo-list .list {
     margin: 1rem 0;
 }
 
-.incomplete-list .todo-item {
+.todo-list .todo-item {
     display: flex;
-    align-items:flex-start;
-    background-color: var(--white);
+    align-items: center;
+    background-color: var(--light);
     padding: 1rem;
     border-radius: 0.5rem;
+    box-shadow: var(--pink-glow);
     margin-bottom: 1rem;
 }
 
@@ -123,14 +117,8 @@ section {
 }
 
 .todo-item .todo-content input {
-    color: var(--dark);
+    color: var(--darker);
     font-size: 1.125rem;
-}
-
-.todo-item label {
-    display: block;
-    margin-right: 1rem;
-    cursor: pointer;
 }
 
 .todo-item .actions {
@@ -140,127 +128,8 @@ section {
 
 .todo-item .actions button {
     display: block;
-    padding: 0.5rem;
-    align-items: 0.5rem;
-    border-radius: 0.25rem;
-    color: var(--white);
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
-    font-weight: 500;
-    border: var(--pink);
-    border-style: solid;
-    border-width: 0.15rem;
+    padding: ;
 }
 
-.todo-item .actions button:hover{
-    opacity: 0.75;
-}
 
-.todo-item .actions .edit {
-    margin-right: 0.5rem;
-    background-color: var(--white);
-}
 
-.todo-item .actions .delete {
-    margin-right: 0.5rem;
-    border: var(pink);
-    border-style: solid;
-    border-width: 0.15rem;
-    background-color: var(--white);
-    font-weight: bolder;
-}
-
-.todo-item.done .todo-content input {
-    text-decoration: line-through;
-    color: var(grey);
-}
-
-button{
-    background-color: var(--white);
-    border: 0.5rem;
-    color: var(--pink);
-    font-size: 15px;
-    padding: 1px;
-    margin: 0.5rem;
-    cursor: pointer;
-    float: right;
-    border: 1px solid var(--pink);
-} */
-
-.checkbox{
-    padding: 2px;
-}
-
-.new-task{
-    padding: 2px;
-}
-
-.editClass{
-    padding: 2px;
-}
-
-.deleteClass{
-    padding: 2px;
-}
-
-button:hover{
-    box-shadow: #008b8b;
-}
-
-h3 {
-    display: flex;
-    align-items: center;
-    color: var(--white);
-    font-weight: 700;
-    font-size: 15px;
-    border-bottom: 2px solid var(--pink);
-    padding: 20px 0 10px;
-    margin: 0;
-    text-transform: uppercase;
-}
-
-label[for="new-task"] {
-    display: flex;
-    color: var(--white);
-    align-items: center;
-    font-weight: 700;
-    font-size: 15px;
-    border-bottom: 2px solid var(--pink);
-    padding: 20px 0 10px;
-    margin: 0;
-    text-transform: uppercase;
-}
-
-/* input[type="text"]{
-    margin: 6px;
-    font-size: 18px;
-    line-height: 18px;
-    height: 18px;
-    padding: 10px;
-    border: 1px solid var(--teal);
-    background: var(--white);
-    border-radius: 2px;
-    color: var(--grey);
-} */
-
-input[type="text"]:focus {
-    color: var(--darker);
-}
-
-/* label[for="new-task"] {
-    display: block;
-    margin: 0 0 20px;
-} */
-
-input#new-task{
-    width: 50%;
-}
-
-p > button:hover{
-    color: var(--lightorange);
-}
-
-#completed-tasks label{
-    text-decoration: line-through;
-    color: var(--grey);
-}
