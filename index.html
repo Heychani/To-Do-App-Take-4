@@ -15,57 +15,42 @@
 </head>
 <body>
 
-        <div class="container">
-            <section class="create-to-do">
+    <main class="app">
+
+        <section class="create-to-do">
             <h1> What do you have planned? </h1>
-            <h3>What do you need to do and when? </h3>
             <form id="new-todo-form">
-                <input id="new-task" type="text" required>
+                <h3>What do you need to do and when? </h3>
+                <input id="content" type="text" name="content" placeholder="e.g. Code for 24 hours" required>
                 <input id="new-date" type="date" required>
-                <button id="add-task-button" type="submit" onclick="addTask(event)">Add Task</button>
+
+                <h3>What part of your life does this fall into? </h3>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="category" id="category1" value="School" />
+                        <span class="bubble school"></span>
+                        <div>School</div>
+                    </label>
+                    <label>
+                        <input type="radio" name="category" id="category2" value="Personal life" />
+                        <span class="bubble personal life"></span>
+                        <div>Personal life</div>
+                    </label>
+                </div>
+
+                <input type="submit" value="Add Task" />
             </form>
-
-            <section class="incomplete-list">
-                <h2>Things To Do </h2>
-                <div class="list" id="incomplete-list"></div>
-            </section>
-
-                        <!-- <div class="todo-item done">
-                            <label>
-                                <input type="checkbox" />
-                                <span class="category personal"></span>
-                            </label>
-
-                            <div class="todo-content">
-                                <input type="text" value="Make dinner" readonly/>
-                            </div>
-
-                            <div class="actions">
-                                <button class="edit">Edit</button>
-                                <button class="delete">Delete</button>
-                            </div>
-                        </div>
-
-                        <div class="todo-item">
-                            <label>
-                                <input type="checkbox" />
-                                <span class="category bussines"></span>
-                            </label>
-
-                            <div class="todo-content">
-                                <input type="text" value="Finish To-Do app" readonly/>
-                            </div>
-
-                            <div class="actions">
-                                <button class="edit">Edit</button>
-                                <button class="delete">Delete</button>
-                            </div> -->
-                        <!-- </div> -->     
-            </section>
+        </section>
 
 
-</body>
+        <section class="todo-list">
+            <h2>Things To Do </h2>
+            <div class="list" id="todo-list"></div>
+        </section>
+
+                        
+    </main>
 
     <script src="app.js"></script>
-
+</body>
 </html>
