@@ -16,12 +16,13 @@
 <body>
 
         <div class="container">
+            <section class="create-to-do">
             <h1> What do you have planned? </h1>
             <h3>What do you need to do and when? </h3>
             <form id="new-todo-form">
                 <input id="new-task" type="text" required>
                 <input id="new-date" type="date" required>
-                <button type="submit" onclick="addTask(event)">Add Task</button>
+                <button id="add-task-button" type="submit" onclick="addTask(event)">Add Task</button>
             </form>
 
             <section class="incomplete-list">
@@ -60,6 +61,7 @@
                                 <button class="delete">Delete</button>
                             </div> -->
                         <!-- </div> -->     
+            </section>
 
 
 </body>
