@@ -37,18 +37,22 @@ function displayTaskElement() {
         const input = document.createElement('input');
         const span = document.createElement('span');
         const content = document.createElement('div');
+        const date = document.createElement('div');
         const actions = document.createElement('div');
         const edit = document.createElement('button');
         const deleteButton = document.createElement('button');
 
         input.type = 'checkbox';
         input.checked = todo.done;
+        span.classList.add('checkthrough');
         
+        date.classList.add('todo-date');
         content.classList.add('todo-content');
         actions.classList.add('actions');
         edit.classList.add('edit');
         deleteButton.classList.add('delete');
 
+        date.innerHTML = `<input type="date" value="${todo.date}" readonly>`;
         content.innerHTML = `<input type="text" value="${todo.content}" readonly>`;
         edit.innerHTML = "Edit";
         deleteButton.innerHTML = "Delete";
@@ -59,6 +63,7 @@ function displayTaskElement() {
         actions.appendChild(deleteButton);
         todoItem.appendChild(label);
         todoItem.appendChild(content);
+        todoItem.appendChild(date);
         todoItem.appendChild(actions);
 
         todoList.appendChild(todoItem);
@@ -93,7 +98,7 @@ function displayTaskElement() {
         })
 
         deleteButton.addEventListener('click', (e) => {
-            todos = todos.filter(t => t != todos);
+            todos = todos.filter(t => t != todo);
             localStorage.setItem('todos', JSON.stringify(todos));
             displayTaskElement()
         })

@@ -97,6 +97,47 @@ input[type="checkbox"] {
     opacity: 0.75;
 }
 
+.checkthrough {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 999px;
+    border: 2px solid var(--pink);
+    box-shadow: var(--pink-glow);
+}
+
+.checkthrough::after {
+    content: '';
+    display: block;
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+    background-color: var(--pink);
+    box-shadow: var(--pink-glow);
+    border-radius: 999px;
+    transition: 0.2s ease-in-out;
+}
+
+input:checked ~ .checkthrough::after {
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+}
+
+#new-date {
+    color: var(--darker);
+    background-color: rgb(247, 221, 225);
+    float: right;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 2px solid;
+    border-radius: 00.5rem;
+    padding: 0.75rem;
+}
+
+
 .todo-list .list {
     margin: 1rem 0;
 }
@@ -118,6 +159,11 @@ input[type="checkbox"] {
 }
 
 .todo-item .todo-content {
+    flex: 1 1 0%;
+}
+
+.todo-item .todo-date {
+    color: var(--pink);
     flex: 1 1 0%;
 }
 
@@ -150,7 +196,8 @@ input[type="checkbox"] {
 }
 
 .todo-item .actions .delete {
-    background-color: var(--red);
+    background-color: var(--pink);
+    opacity: 0.75;
 }
 
 .todo-item.done .todo-content input {
