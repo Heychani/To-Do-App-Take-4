@@ -7,6 +7,7 @@
     --orange: #ffa500;
     --lightorange: #e9bd6b;
     --pink: #d87093;
+    --red: #f0000f
 
     --shadow: 0 1px 3px rbga(0, 0, 0, 0,1);
 
@@ -25,17 +26,17 @@ input:not([type="radio"]):not([type="checkbox"]), button {
     appearance: none;
     border: none;
     outline: none;
-    /* background: none; */
+    background: none;
     cursor: initial;
 }
 
 body {
     background-color: var(--white);
     color: var(--darker);
-    background-blend-mode: 100;
+    /* background-blend-mode: 100;
     background-image: url(https://images.unsplash.com/photo-1563291074-2bf8677ac0e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGxhaW4lMjBiYWNrZ3JvdW5kfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
 }
 
 section {
@@ -46,34 +47,38 @@ section {
 }
 
 h3 {
-    display: flex;
-    align-items: center;
-    color: var(--white);
-    font-weight: 400;
+    color: var(--darker);
     font-size: 1rem;
-    border-bottom: 2px solid var(--pink);
-    padding: 2rem;
-    margin: 0;
-    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+h4 {
+    color: var(--pink);
+    font-size: 0.875rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
 }
 
 .create-todo input[type="text"] {
     display: block;
-    width: 80%;
+    width: 100%;
     font-size: 1.125rem;
-    padding: 2rem;
+    padding: 1rem;
     color: var(--darker);
     background-color: var(--light);
     border-radius: 0.5rem;
     box-shadow: var(--pink-glow);
-    margin: 2rem;
+    margin-bottom: 1rem;
+    margin-top: 3rem;
 }
 
+input[type="radio"],
 input[type="checkbox"] {
     display: none;
 }
 
-.create-to-do input[type="submit"] {
+.create-todo input[type="submit"] {
     display: block;
     width: 100%;
     font-size: 1.125rem;
@@ -88,7 +93,7 @@ input[type="checkbox"] {
     transition: 0.2s ease-in-out;
 }
 
-.create-to-do input[type="submit"]:hover {
+.create-todo input[type="submit"]:hover {
     opacity: 0.75;
 }
 
@@ -128,8 +133,33 @@ input[type="checkbox"] {
 
 .todo-item .actions button {
     display: block;
-    padding: ;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    color: var(--white);
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
 }
+
+.todo-item .actions button:hover {
+    opacity: 0.75;
+}
+
+.todo-item .actions .edit {
+    margin-right: 0.5rem;
+    background-color: var(--pink);
+}
+
+.todo-item .actions .delete {
+    background-color: var(--red);
+}
+
+.todo-item.done .todo-content input {
+    text-decoration: line-through;
+    color: var(--grey);
+}
+
+
+
 
 
 

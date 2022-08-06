@@ -1,42 +1,32 @@
-// add -
-// edit -
-// delete -
-// due dates
-// alphabetically sorted
-// strike through -
-// JSON format
-
-//verskillende variables wat ek wil gebruik in my JavaScript functions
-
 window.addEventListener('load', () => {
     todos = JSON.parse(localStorage.getItem('todos')) || []; //to exchange the data to and from the server. When receiving data from the web the data will always be a string
-    const taskInput = document.querySelector("new-todo-form"); 
+    const newTodoForm = document.querySelector('#new-todo-form'); 
 
 
-        taskInput.addEventListener('submit', e => {
-            e.preventDefault();
+    newTodoForm.addEventListener('submit', e => {
+        e.preventDefault();
 
-            const todo = {
-                content: e.target.elements.content.value,
-                category: e.target.elements.category.value,
-                done: false,
-                createdAt: new Date().getTime()
-            }
-            todos.push(todo);
+        const todo = {
+            content: e.target.elements.content.value,
+            done: false,
+            createdAt: new Date().getTime()
+        }
 
-            localStorage.setItem('todos', JSON.stringify(todos));
+        todos.push(todo);
 
-            e.target.reset();
+        localStorage.setItem('todos', JSON.stringify(todos));
 
-            displayTaskElement();
+        e.target.reset();
+
+        displayTaskElement()
     })
 
     displayTaskElement()
 
 })
 
-function displayTaskElement(){
-    const todoList = document.querySelector('#incomplete-list');
+function displayTaskElement() {
+    const todoList = document.querySelector('#todo-list');
     todoList.innerHTML = "";
 
     todos.forEach(todo => {
@@ -46,21 +36,22 @@ function displayTaskElement(){
         const label = document.createElement('label');
         const input = document.createElement('input');
         const span = document.createElement('span');
-        const content = document.createElement('content');
-        const actions = document.createElement('actions');
-        const edit = document.createElement('edit');
-        const deleteButton = document.createElement('delete');
+        const content = document.createElement('div');
+        const actions = document.createElement('div');
+        const edit = document.createElement('button');
+        const deleteButton = document.createElement('button');
 
         input.type = 'checkbox';
         input.checked = todo.done;
         
         content.classList.add('todo-content');
         actions.classList.add('actions');
-        edit.classList.add('delete');
+        edit.classList.add('edit');
+        deleteButton.classList.add('delete');
 
-        content.innerHTML = <input type="text" value="${todo.content}" readonly></input>
-        edit.innerHTML = "edit";
-        deleteButton.innerHTML = "delete";
+        content.innerHTML = `<input type="text" value="${todo.content}" readonly>`;
+        edit.innerHTML = "Edit";
+        deleteButton.innerHTML = "Delete";
 
         label.appendChild(input);
         label.appendChild(span);

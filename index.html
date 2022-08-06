@@ -7,8 +7,6 @@
     <title>To Do App</title>
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-    <link rel="preconnect" href="https://fonts.googleapis.com"> 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;600;800&family=Raleway:wght@100;200;300;500;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="stylesheet.css" />
@@ -17,12 +15,15 @@
 
     <main class="app">
 
-        <section class="create-to-do">
+        <section class="create-todo">
             <h1> What do you have planned? </h1>
             <form id="new-todo-form">
                 <h3>What do you need to do and when? </h3>
-                <input id="content" type="text" name="content" placeholder="e.g. Code for 24 hours" required>
-                <input id="new-date" type="date" required>
+                <input id="content" 
+                type="text" 
+                name="content" 
+                placeholder="e.g. Code for 24 hours" required>
+                <!-- <input id="new-date" type="date" required> -->
 
                 <input type="submit" value="Add Task" />
             </form>
@@ -32,11 +33,16 @@
         <section class="todo-list">
             <h2>Things To Do </h2>
             <div class="list" id="todo-list"></div>
+            <label>
+                <input type="radio">
+                <span class="checkthrough"></span>
+            </label>
         </section>
 
                         
     </main>
 
     <script src="app.js"></script>
+
 </body>
 </html>
