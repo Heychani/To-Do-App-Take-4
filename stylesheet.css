@@ -3,15 +3,13 @@
     --light: #eee;
     --dark: #556173;
     --darker: #131519;
+    --lightgrey: #d3d3d3;
     --grey: #6B7280;
-    --orange: #ffa500;
-    --lightorange: #e9bd6b;
     --pink: #d87093;
 
     --shadow: 0 1px 3px rbga(0, 0, 0, 0,1);
 
     --pink-glow: 0px 0px 4px rgba(216, 112, 147, 0.75);
-    --orange-glow: 0px 0px 4px rgba(225, 165, 0, 0.75);
 }
 
 *{
@@ -49,6 +47,9 @@ h1 {
 	font-family: 'Inter', sans-serif;
     background-image: url("images/Header\ h1\ background.png");
     background-position: 100%;
+    border-style: solid;
+    border-width: 6px;
+    border-color: var(--white);
 }
 
 section {
@@ -62,7 +63,7 @@ h2 {
     padding: 1rem;
     font-size: 2rem;
     font-weight: 500;
-    color: var(--white);
+    color: rgb(114, 114, 114);
 }
 
 
@@ -82,7 +83,9 @@ h2 {
     color: var(--darker);
     background-color: var(--white);
     border-radius: 0.5rem;
-    box-shadow: var(--pink-glow);
+    border-style:solid;
+    border-color: var(--lightgrey);
+    border-width: 2px;
     margin-bottom: 1rem;
     margin-top: 3rem;
 }
@@ -100,11 +103,12 @@ input[type="checkbox"] {
 #newdate {
     width: 28%;
     font-size: 1.125rem;
-    color: var(--white);
-    background-color: lightgrey;
+    color: var(--grey);
+    background-color: var(--white);
     border-radius: 00.5rem;
     padding: 1rem;
-    box-shadow: var(--pink);
+    border-style: solid;
+    border-color: var(--lightgrey);
 }  
 
 .create-todo input[type="submit"] {
@@ -134,7 +138,6 @@ input[type="checkbox"] {
     height: 20px;
     border-radius: 999px;
     border: 2px solid var(--pink);
-    box-shadow: var(--pink-glow);
 }
 
 .checkthrough::after {
@@ -143,8 +146,7 @@ input[type="checkbox"] {
     opacity: 0;
     width: 0px;
     height: 0px;
-    background-color: var(--pink);
-    box-shadow: var(--pink-glow);
+    background-color: var(--pink); 
     border-radius: 999px;
     transition: 0.2s ease-in-out;
 }
