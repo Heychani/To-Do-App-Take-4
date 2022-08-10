@@ -7,7 +7,6 @@
     --orange: #ffa500;
     --lightorange: #e9bd6b;
     --pink: #d87093;
-    --red: #f0000f
 
     --shadow: 0 1px 3px rbga(0, 0, 0, 0,1);
 
@@ -66,6 +65,7 @@ h2 {
     color: var(--white);
 }
 
+
 /* h4 {
     color: var(--pink);
     font-size: 0.875rem;
@@ -73,8 +73,9 @@ h2 {
     margin-bottom: 0.5rem;
 } */
 
+
 .create-todo input[type="text"] {
-    display: block;
+    display: flex;
     width: 100%;
     font-size: 1.125rem;
     padding: 1rem;
@@ -91,9 +92,24 @@ input[type="checkbox"] {
     display: none;
 }
 
-.create-todo input[type="submit"] {
+/* #content,
+#newdate {
     display: block;
-    width: 100%;
+} */
+
+#newdate {
+    width: 28%;
+    font-size: 1.125rem;
+    color: var(--white);
+    background-color: lightgrey;
+    border-radius: 00.5rem;
+    padding: 1rem;
+    box-shadow: var(--pink);
+}  
+
+.create-todo input[type="submit"] {
+    width: 70%;
+    float: right;
     font-size: 1.125rem;
     padding: 1rem;
     color: var(--white);
@@ -138,17 +154,6 @@ input:checked ~ .checkthrough::after {
     height: 10px;
     opacity: 1;
 }
-
-#newdate {
-    color: var(--grey);
-    background-color: var(--white);
-    float: right;
-    margin-bottom: 1rem;
-    border: 2px solid;
-    border-radius: 00.5rem;
-    padding: 0.75rem;
-}
-
 
 .todo-list .list {
     margin: 1rem 0;
