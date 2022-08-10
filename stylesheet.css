@@ -31,12 +31,25 @@ input:not([type="radio"]):not([type="checkbox"]), button {
 }
 
 body {
-    background-color: var(--white);
+    background-color: rgb(239, 239, 239);
     color: var(--darker);
-    /* background-blend-mode: 100;
-    background-image: url(https://images.unsplash.com/photo-1563291074-2bf8677ac0e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGxhaW4lMjBiYWNrZ3JvdW5kfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60);
-    background-repeat: no-repeat;
-    background-size: cover; */
+    padding: 5rem;
+    width: 100%;
+}
+
+h1 {    
+    display: block;
+    width: 100%;
+    font-size: 4rem;
+    padding: 3rem;
+    color: var(--white);
+    border-radius: 0.5rem;
+    box-shadow: var(--pink-glow);
+    margin-bottom: 1rem;
+	font-weight: 500;
+	font-family: 'Inter', sans-serif;
+    background-image: url("images/Header\ h1\ background.png");
+    background-position: 100%;
 }
 
 section {
@@ -46,19 +59,19 @@ section {
     padding-right: 1.5rem;
 }
 
-h3 {
-    color: var(--darker);
-    font-size: 1rem;
-    font-weight: 400;
-    margin-bottom: 0.5rem;
+h2 {
+    padding: 1rem;
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--white);
 }
 
-h4 {
+/* h4 {
     color: var(--pink);
     font-size: 0.875rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
-}
+} */
 
 .create-todo input[type="text"] {
     display: block;
@@ -66,7 +79,7 @@ h4 {
     font-size: 1.125rem;
     padding: 1rem;
     color: var(--darker);
-    background-color: var(--light);
+    background-color: var(--white);
     border-radius: 0.5rem;
     box-shadow: var(--pink-glow);
     margin-bottom: 1rem;
@@ -82,7 +95,7 @@ input[type="checkbox"] {
     display: block;
     width: 100%;
     font-size: 1.125rem;
-    padding: 1rem 1.5rem;
+    padding: 1rem;
     color: var(--white);
     font-weight: 700;
     text-transform: uppercase;
@@ -126,11 +139,10 @@ input:checked ~ .checkthrough::after {
     opacity: 1;
 }
 
-#new-date {
-    color: var(--darker);
-    background-color: rgb(247, 221, 225);
+#newdate {
+    color: var(--grey);
+    background-color: var(--white);
     float: right;
-    margin-top: 1rem;
     margin-bottom: 1rem;
     border: 2px solid;
     border-radius: 00.5rem;
@@ -145,7 +157,7 @@ input:checked ~ .checkthrough::after {
 .todo-list .todo-item {
     display: flex;
     align-items: center;
-    background-color: var(--light);
+    background-color: var(--white);
     padding: 1rem;
     border-radius: 0.5rem;
     box-shadow: var(--pink-glow);
