@@ -224,6 +224,20 @@ input:checked ~ .checkthrough::after {
     color: var(--grey);
 }
 
+#alphabetically {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.5rem;
+    color: var(--white);
+    font-weight: 500;
+    text-transform: uppercase;
+    background-color: var(--pink);
+    box-shadow: var(--pink-glow);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
 
 
 

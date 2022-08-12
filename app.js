@@ -25,26 +25,28 @@ window.addEventListener('load', () => {
 
 })
 
-// function alphabeticallySorted() {
-//     var list, i, switching, b, shouldSwitch;
-//     list = document.getElementById('#todo-list');
-//     switching = true;
-//     while (switching) {
-//         switching = false;
-//         b = list.getElementsByTagName('todo-list');
-//         for (i = 0; i < (b.length - 1); i++) {
-//             shouldSwitch = false;
-//             if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLocaleLowerCase()) {
-//                 shouldSwitch = true;
-//                 break;
-//             }
-//         }
-//         if (shouldSwitch) {
-//             b[i].parentNode.insertBefore(b[i + 1], b[i]);
-//             switching = true;
-//         }
-//     }
-// }
+function sortAlphabetically() {
+    var list, i, switching, listitems, shouldSwitch;
+    list = document.getElementById('todo-list');
+    switching = true;
+
+    while (switching) {
+        switching = false;
+        listitems = list.getElementsByClassName('todo-item');
+
+        for (i = 0; i < (listitems.length - 1); i++) {
+            shouldSwitch = false;
+            if (listitems[i].innerHTML.toLowerCase() > listitems[i + 1].innerHTML.toLocaleLowerCase()) {
+                shouldSwitch = true;
+                break;
+            }
+        }
+        if (shouldSwitch) {
+            listitems[i].parentNode.insertBefore(listitems[i + 1], listitems[i]);
+            switching = true;
+        }
+    }
+}
 
 function displayTaskElement() {
     const todoList = document.querySelector('#todo-list');
