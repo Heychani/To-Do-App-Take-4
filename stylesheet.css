@@ -100,7 +100,7 @@ input[type="checkbox"] {
     display: block;
 } */
 
-#newdate {
+#date {
     width: 28%;
     font-size: 1.125rem;
     color: var(--grey);
