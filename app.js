@@ -9,6 +9,7 @@ window.addEventListener('load', () => {
         const todo = {
             content: e.target.elements.content.value,
             done: false,
+            date: e.target.elements.date.value,
             createdAt: new Date().getTime()
         }
 
@@ -128,9 +129,6 @@ function sortAlphabetically() {
         }
     }
 }
-
-
-
 
 
 
