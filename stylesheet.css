@@ -1,4 +1,3 @@
-/* Here I created colours for my appliction, to keep it consistent and neat*/
 :root {
     --white: #fff;
     --light: #eee;
@@ -176,10 +175,6 @@ input:checked ~ .checkthrough::after {
     display: block;
     margin-right: 1rem;
     cursor: pointer;
-}
-
-.todo-content input {
-    width: 100%;
 }
 
 .todo-item .todo-content {

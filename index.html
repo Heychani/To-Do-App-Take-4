@@ -5,17 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do App</title>
-    <!-- I have added google fonts into my app to make it look more stylish and readable-->
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;600;800&family=Raleway:wght@100;200;300;500;700;800&display=swap" rel="stylesheet">
-    <!-- Here I linked in my stylesheet-->
+
     <link rel="stylesheet" href="stylesheet.css" />
 </head>
 <body>
-    <!-- My main is called app and my entire app will be within the main-->
+
     <main class="app">
-        <!-- Section is where the user will see the form and where the user will be able to create an item to do-->
+
         <section class="create-todo">
             <h1> What do you have planned? </h1>
             <form id="new-todo-form">
@@ -26,14 +25,14 @@
                 <input id="date" 
                 type="date" 
                 name="date" required>
-            <!-- This is the submit button called Add Task, this will be pressed when the task is filled in and the date-->
+
             <input type="submit" value="Add Task" />
 
             </form>
 
         </section>
 
-        <!-- This section is where all the to-do items will be listed and shown to the user-->
+
         <section class="todo-list">
             <h2>Things To Do </h2>
             <div class="list" id="todo-list"></div>
@@ -43,15 +42,14 @@
             </label> -->
         </section>
 
-        <!-- This button is to organize and sort the list items into alphabetical order when pressed-->
         <button onclick="sortAlphabetically()" id="alphabetically"
         name="sortAlphabet" 
         value="sort">Sort alphabetically</button>
 
                         
     </main>
-    <!-- This is where I added the javascript into the HTML-->
-    <script src="script.js"></script>
+
+    <script src="app.js"></script>
 
 </body>
 </html>
