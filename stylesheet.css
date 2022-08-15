@@ -140,6 +140,10 @@ input[type="checkbox"] {
     border: 2px solid var(--pink);
 }
 
+.todo-content input{
+    width: 100%; 
+}
+
 .checkthrough::after {
     content: '';
     display: block;
