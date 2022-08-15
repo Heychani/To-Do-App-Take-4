@@ -102,24 +102,26 @@ function displayTaskElement() { //function is called displayTaskElement, when th
             })
         })
 
-        deleteButton.addEventListener('click', (e) => {
-            todos = todos.filter(t => t != todo);
-            localStorage.setItem('todos', JSON.stringify(todos));
-            displayTaskElement()
+        deleteButton.addEventListener('click', (e) => { //The code sets up an event listener for the 'click' event on the 'deleteButton' element.
+            todos = todos.filter(t => t != todo); //The code filters the todos list to remove the current todo.
+            localStorage.setItem('todos', JSON.stringify(todos)); //This stores the filtered todos list in localstorage.
+            displayTaskElement() //displays the filtered todos.
         })
     })
 }
 
 function sortAlphabetically() {
-    var list, i, switching, listitems, shouldSwitch;
+    var list, i, switching, listitems, shouldSwitch; //the code staers by getting a referance to the list of to-dos in the DOM.
     list = document.getElementById('todo-list');
-    switching = true;
-
-    while (switching) {
+    switching = true; //a boolean variable is set to true, which will be used to control the loop.
+    /* The code loops through the to-dos, checking each one to see if it should be swapped with the one after it, if it should be swopped,
+    the code inserts the to-do after the on it is next to alphabetically, the boolean then ends with true again so the loop will continue executing 
+    and putting the list in alphabetical order.*/
+    while (switching) { 
         switching = false;
         listitems = list.getElementsByClassName('todo-item');
 
-        for (i = 0; i < (listitems.length - 1); i++) {
+        for (i = 0; i < (listitems.length - 1); i++) { 
             shouldSwitch = false;
             if (listitems[i].innerHTML.toLowerCase() > listitems[i + 1].innerHTML.toLocaleLowerCase()) {
                 shouldSwitch = true;
@@ -132,6 +134,8 @@ function sortAlphabetically() {
         }
     }
 }
+
+
 
 
 

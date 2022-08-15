@@ -5,37 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do App</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- I downloaded a google font to spice up my code and to look more pleasing for the user -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;600;800&family=Raleway:wght@100;200;300;500;700;800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="stylesheet.css" />
+    <link rel="stylesheet" href="stylesheet.css" /> <!-- I linked in the CSS here-->
 </head>
 <body>
 
-    <main class="app">
+    <main class="app"> <!-- The main tag defines the main content area of the page -->
 
-        <section class="create-todo">
-            <h1> What do you have planned? </h1>
-            <form id="new-todo-form">
+        <section class="create-todo"> <!-- This has all the content inside with the class 'create-todo', this section is for creating the todo's-->
+            <h1> What do you have planned? </h1> <!-- My header that you will see when the page opens at the top-->
+            <form id="new-todo-form"> <!-- The form tag has two inputs that the user should provide, an input for date and an input for submit-->
                 <input id="content" 
-                type="text" 
+                type="text"
                 name="content" 
                 placeholder="What do you need to do and when? e.g. Code for 24 hours" required>
                 <input id="date" 
                 type="date" 
                 name="date" required>
 
-            <input type="submit" value="Add Task" />
+            <input type="submit" value="Add Task" /> <!-- This input is a submit button that is called Add Task, this will add the task to the list items that forms part of the 'todo-list'-->
 
             </form>
 
-        </section>
+        </section> <!-- The first section ends here -->
 
 
-        <section class="todo-list">
-            <h2>Things To Do </h2>
-            <div class="list" id="todo-list"></div>
+        <section class="todo-list"> <!-- The second section is 'todo-list' this is where all the todo items will be displayed -->
+            <h2>Things To Do </h2> <!-- This is the second header that will be displayed above the todo items -->
+            <div class="list" id="todo-list"></div> <!-- A new div element is created that will take in the todo items created by the user with class name list -->
             <!-- <label>
                 <input type="radio">
                 <span class="checkthrough"></span>
@@ -44,12 +44,12 @@
 
         <button onclick="sortAlphabetically()" id="alphabetically"
         name="sortAlphabet" 
-        value="sort">Sort alphabetically</button>
+        value="sort">Sort alphabetically</button> <!-- This button will be displayed at the bottom of the page, this has an onclick function that when it is clicked the sortAlphabetically function will be called -->
 
                         
     </main>
 
-    <script src="app.js"></script>
+    <script src="script.js"></script> <!-- I linked in the JS file here -->
 
 </body>
 </html>

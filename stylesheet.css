@@ -66,15 +66,6 @@ h2 {
     color: rgb(114, 114, 114);
 }
 
-
-/* h4 {
-    color: var(--pink);
-    font-size: 0.875rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-} */
-
-
 .create-todo input[type="text"] {
     display: flex;
     width: 100%;
@@ -94,11 +85,6 @@ input[type="radio"],
 input[type="checkbox"] {
     display: none;
 }
-
-/* #content,
-#newdate {
-    display: block;
-} */
 
 #date {
     width: 28%;
